@@ -3,9 +3,13 @@ import Child from './Child';
 import MyButton from './MyButton';
 import './style.css';
 
-const context1 = React.createContext([]);
+interface ContextType {
+  value1: string;
+}
+
+export const context1 = React.createContext<ContextType[]>([]);
 export default function App() {
-  const [myState, setMyState] = React.useState({ value1: 'init' });
+  const [myState, setMyState] = React.useState({ value1: 'init value1' });
 
   return (
     <context1.Provider value={[myState, setMyState]}>
