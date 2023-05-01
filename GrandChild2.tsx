@@ -1,8 +1,8 @@
 import React = require('react');
-import { context1 } from './App';
+import { MyContext } from './contexts/MyContext';
 
 export default function GrandChild2() {
-  const [state, setState] = React.useContext(context1);
+  const [state, setState] = React.useContext(MyContext);
   const onClickHandler = (prevState) => {
     console.log('onclick');
     setState({ ...prevState, value1: 'updated', num1: prevState.num1 + 1 });
