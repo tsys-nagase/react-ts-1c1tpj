@@ -3,9 +3,9 @@ import { context1 } from './App';
 
 export default function GrandChild2() {
   const [state, setState] = React.useContext(context1);
-  const onClickHandler = () => {
+  const onClickHandler = (prevState) => {
     console.log('onclick');
-    setState({ value1: 'updated' });
+    setState({ ...prevState, value1: 'updated', num1: prevState.num1 + 1 });
   };
   return (
     <div>
