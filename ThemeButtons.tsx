@@ -28,7 +28,7 @@ export default function Theme() {
             </button>
           );
         })}
-        <div>{state.value1}</div>
+        <div>現在のState:{state.value1}</div>
       </div>
     </div>
   );

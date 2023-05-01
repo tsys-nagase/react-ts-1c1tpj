@@ -14,3 +14,5 @@ export default function MyContextProvider({ children }) {
     </MyContext.Provider>
   );
 }
+
+export const useMyContext = () => React.useContext(MyContext);
