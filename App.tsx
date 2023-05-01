@@ -5,18 +5,11 @@ import MyButton from './MyButton';
 import './style.css';
 import Theme from './Theme';
 
-interface ContextType {
-  value1: string;
-  num1?: number;
-}
 
-export const context1 = React.createContext<any>([]);
+
 export default function App() {
-  const [myState, setMyState] = React.useState({
-    value1: 'init value1',
-    num: 0,
-  });
 
+  
   return (
     <MyContextProvider>
       <div>

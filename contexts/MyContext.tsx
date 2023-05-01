@@ -4,7 +4,7 @@ interface ContextType {
   value1: string;
 }
 
-export const MyContext = React.createContext<ContextType[]>([]);
+export const MyContext = React.createContext<any>([]);
 export default function MyContextProvider({ children }) {
   const [myState, setMyState] = React.useState({ value1: 'init value1' });
 
