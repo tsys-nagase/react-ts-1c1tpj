@@ -3,7 +3,15 @@ import { context1 } from './App';
 
 export default function Theme() {
   const [state, setState] = React.useContext(context1);
-  const THEMES = ['light', 'dark', 'red'];
+  const THEMES = ['green', 'blue', 'red'];
+
+  const handleThemeChange = (theme) => {
+    setState((prevState) => ({
+      ...prevState,
+      theme,
+    }));
+  };
+
   return (
     <div>
       <div style={{ background: '#dafada' }}>
@@ -11,9 +19,13 @@ export default function Theme() {
         {THEMES.map((_theme) => {
           console.log(_theme);
           return (
-            <input key={_theme} style={{ background: _theme }}>
+            <button
+              key={_theme}
+              style={{ background: _theme }}
+              onClick={() => handleThemeChange(_theme)}
+            >
               {_theme}
-            </input>
+            </button>
           );
         })}
         <div>{state.value1}</div>
