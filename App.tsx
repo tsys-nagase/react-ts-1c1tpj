@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Child from './Child';
+import MyContextProvider from './contexts/MyContext';
 import MyButton from './MyButton';
 import './style.css';
 import Theme from './Theme';
@@ -10,16 +11,19 @@ interface ContextType {
 
 export const context1 = React.createContext<ContextType[]>([]);
 export default function App() {
-  const [myState, setMyState] = React.useState({ value1: 'init value1' });
+  const [myState, setMyState] = React.useState({
+    value1: 'init value1',
+    num: 0,
+  });
 
   return (
-    <context1.Provider value={[myState, setMyState]}>
+    <MyContextProvider>
       <div>
         <h3>練習問題</h3>
         <MyButton value="+" />
         <Child />
-        <Theme/>
+        <Theme />
       </div>
-    </context1.Provider>
+    </MyContextProvider>
   );
 }
