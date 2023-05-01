@@ -1,8 +1,9 @@
 import React = require('react');
-import { context1 } from './App';
+
+import { MyContext } from './contexts/MyContext';
 
 export default function GrandChild() {
-  const [state, setState] = React.useContext(context1);
+  const [state, setState] = React.useContext(MyContext);
   return (
     <div>
       Grand
