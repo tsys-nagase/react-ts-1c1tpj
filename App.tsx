@@ -2,6 +2,7 @@ import * as React from 'react';
 import Child from './Child';
 import MyButton from './MyButton';
 import './style.css';
+import Theme from './Theme';
 
 interface ContextType {
   value1: string;
@@ -17,6 +18,7 @@ export default function App() {
         <h3>練習問題</h3>
         <MyButton value="+" />
         <Child />
+        <Theme/>
       </div>
     </context1.Provider>
   );
