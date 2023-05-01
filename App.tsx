@@ -7,6 +7,7 @@ export default function App() {
     <div>
       <h3>練習問題</h3>
       <MyButton value="+" />
+      <Child />
     </div>
   );
 }
