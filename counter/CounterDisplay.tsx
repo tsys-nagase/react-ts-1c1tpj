@@ -1,4 +1,11 @@
 import * as React from 'react';
+import { useCounterContext } from '../contexts/CounterContext';
 export default function CounterDisplay() {
-  return <div style={{ background: '#ff34fa',padding:"5px" }}>Display</div>;
+  const counter = useCounterContext();
+
+  return (
+    <div style={{ background: '#ff34fa', padding: '5px' }}>
+      CounterContext: {counter}
+    </div>
+  );
 }
