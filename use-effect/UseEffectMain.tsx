@@ -11,25 +11,35 @@ export default function UseEffectMain() {
     //     return prev + 1;
     //   });
     // }, 1000);
+    return () => {
+      console.log('🈲UserEffect終了処理 ');
+    };
   }, []);
 
   useEffect(() => {
-    console.log(time);
-  }, [time]);
+    console.log('✅変更後の値は', checked);
+    return () => {
+      console.log('チェックのクリーンナップ処理', checked);
+    };
+  }, [checked]);
 
   const checkBoxHandler = (checked) => {
-    console.log("checked")
-    return !checked;
+    console.log('checked');
+    setChecked(!checked);
   };
 
   return (
     <div style={{ background: '#f1f1f1' }}>
       UserEffectMain
-      <input
-        type={'checkbox'}
-        value={checked}
-        onClick={checkBoxHandler}
-      ></input>
+      <br />
+      <label>
+        <input
+          type={'checkbox'}
+          value={checked}
+          onClick={() => checkBoxHandler(checked)}
+        ></input>
+        click me
+      </label>
     </div>
   );
 }
