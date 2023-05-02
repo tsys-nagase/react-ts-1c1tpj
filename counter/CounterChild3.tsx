@@ -9,12 +9,18 @@ export default function CounterChild3() {
 
   const onChangeHandler = (e: any) => {
     console.log('onchange');
-    counterDispatch({ type: 'setname', payload: { step: 0, val1: e.value } });
+    counterDispatch({ type: 'setname', payload: { step: 0, val1: e.target.value } });
   };
 
   return (
     <div style={{ background: '#ff34fa', padding: '5px' }}>
-      <input type="text">def</input>
+      <label htmlFor="input">Input Field:</label>
+      <input
+        type="text"
+        id="input"
+        value={counter.name}
+        onChange={onChangeHandler}
+      />
     </div>
   );
 }

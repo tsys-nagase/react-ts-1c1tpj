@@ -17,15 +17,15 @@ const CounterDispatchContext = React.createContext<
   React.Dispatch<CounterAction>
 >(() => {});
 // reducer
-export const counterReducer = (prev: CounterState, action: CounterAction) => {
+export const counterReducer = (prevState: CounterState, action: CounterAction) => {
   console.log('step:', action.payload.step);
   switch (action.type) {
     case '+':
-      return { ...prev, num: prev.num + action.payload.step };
+      return { ...prevState, num: prevState.num + action.payload.step };
     case '-':
-      return { ...prev, num: prev.num - action.payload.step };
+      return { ...prevState, num: prevState.num - action.payload.step };
     case 'setname':
-      return { ...prev, name: action.payload.val1 };
+      return { ...prevState, name: action.payload.val1 };
     default:
       throw new Error('errorです');
   }
