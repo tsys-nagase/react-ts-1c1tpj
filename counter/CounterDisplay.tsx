@@ -5,7 +5,10 @@ export default function CounterDisplay() {
 
   return (
     <div style={{ background: '#ff34fa', padding: '5px' }}>
-      CounterContext: {counter}
+      CounterContext: {counter.num}
+      <br />
+      CounterContext: {counter.name}
+      <br />
     </div>
   );
 }
