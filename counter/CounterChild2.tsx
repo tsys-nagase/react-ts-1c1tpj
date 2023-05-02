@@ -5,7 +5,7 @@ export default function CounterChild2() {
   const counterDispatch = useCounterDispatchContext();
   const clickMinusButtonHandler = (num: number) => {
     console.log('minus button ');
-    counterDispatch({ type: '-', step: num });
+    counterDispatch({ type: '-', payload: { step: num } });
   };
   return (
     <div style={{ background: '#123456', padding: '5px' }}>

@@ -9,17 +9,19 @@ const CounterContext = React.createContext<{
   name: string;
   num: number;
 }>({ name: 'def name', num: 0 });
-const CounterDispatchContext = React.createContext<React.Dispatch<CounterAction>>(()=>{});
+const CounterDispatchContext = React.createContext<
+  React.Dispatch<CounterAction>
+>(() => {});
 
 export const CounterProvider = ({ children }) => {
   const [counter, counterDispatch] = React.useReducer(
-    (prev, { type, step }) => {
-      console.log('step:', step);
-      switch (type) {
+    (prev: number, action: CounterAction) => {
+      console.log('step:', action.payload.step);
+      switch (action.type) {
         case '+':
-          return prev + step;
+          return prev + action.payload.step;
         case '-':
-          return prev - step;
+          return prev - action.payload.step;
         default:
           throw new Error('errorです');
       }

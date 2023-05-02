@@ -4,7 +4,7 @@ export default function CounterChild1() {
   const counterDispatch = useCounterDispatchContext();
   const ClickPlusButtonHandler = (num: number) => {
     console.log('plus', num);
-    counterDispatch({ type: '+', step: num });
+    counterDispatch({ type: '+', payload: { step: num } });
   };
   return (
     <div style={{ background: '#123456', padding: '5px' }}>
