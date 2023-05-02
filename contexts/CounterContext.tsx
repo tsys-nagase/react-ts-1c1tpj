@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 type CounterAction = {
-  type: '+' | '-';
+  type: '+' | '-' | 'setname';
   payload: { step: number; val1?: string };
 };
 
@@ -24,6 +24,8 @@ export const counterReducer = (prev: CounterState, action: CounterAction) => {
       return { ...prev, num: prev.num + action.payload.step };
     case '-':
       return { ...prev, num: prev.num - action.payload.step };
+    case 'setname':
+      return { ...prev, name: action.payload.val1 };
     default:
       throw new Error('errorです');
   }
