@@ -1,10 +1,15 @@
 import * as React from 'react';
 
+type CounterAction = {
+  type: '+' | '-';
+  payload: { step: number; val1?: string };
+};
+
 const CounterContext = React.createContext<{
-  type: string;
+  name: string;
   num: number;
-}>({ type: "string", num: 0 });
-const CounterDispatchContext = React.createContext<any>({});
+}>({ name: 'def name', num: 0 });
+const CounterDispatchContext = React.createContext<React.Dispatch<CounterAction>>(()=>{});
 
 export const CounterProvider = ({ children }) => {
   const [counter, counterDispatch] = React.useReducer(
