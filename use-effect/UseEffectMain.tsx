@@ -17,10 +17,19 @@ export default function UseEffectMain() {
     console.log(time);
   }, [time]);
 
+  const checkBoxHandler = (checked) => {
+    console.log("checked")
+    return !checked;
+  };
+
   return (
     <div style={{ background: '#f1f1f1' }}>
       UserEffectMain
-      <input type="checkbox" value={checked}></input>
+      <input
+        type={'checkbox'}
+        value={checked}
+        onClick={checkBoxHandler}
+      ></input>
     </div>
   );
 }
