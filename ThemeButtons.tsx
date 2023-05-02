@@ -1,8 +1,9 @@
 import React = require('react');
-import { MyContext } from './contexts/MyContext';
+import { MyContext, useMyContext } from './contexts/MyContext';
 
 export default function Theme() {
-  const [state, setState] = React.useContext(MyContext);
+  //  const [state, setState] = React.useContext(MyContext);
+  const [state, setState] = useMyContext(); // short hand 
   const THEMES = ['green', 'blue', 'red'];
 
   const handleThemeChange = (theme) => {
