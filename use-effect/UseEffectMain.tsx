@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+import { useCount } from './hooks';
 
 export default function UseEffectMain() {
   const [time, setTime] = useState(0);
   const [checked, setChecked] = useState(false);
+
+  const [count, countupHandler] = useCount();
   useEffect(() => {
     console.log('use Effect main called');
     // setInterval(() => {
@@ -33,6 +36,8 @@ export default function UseEffectMain() {
       UserEffectMain
       <br />
       <label>
+        <div>🐧{count}</div>
+        <button onClick={countupHandler}>CountUp!</button>
         <input
           type={'checkbox'}
           value={checked}
